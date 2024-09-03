@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen": "supabase gen types typescript --project-id tbppajqrxdoaokadgehj > database.types.ts"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.1",
+    "@supabase/supabase-js": "^2.45.3",
     "clsx": "^2.1.1",
     "next": "14.2.6",
     "react": "^18",
