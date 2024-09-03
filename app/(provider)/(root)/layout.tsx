@@ -1,4 +1,4 @@
-import Header from '@/app/_components/Header';
+import Header from '@/components/header/Header';
 import { PropsWithChildren } from 'react';
 
 function layout({ children }: PropsWithChildren) {
