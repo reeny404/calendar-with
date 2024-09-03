@@ -22,5 +22,6 @@
 
 <br/>
 
-<h3>ERD</h3>
+<h2>ERD</h2>
+
 ![image](https://github.com/user-attachments/assets/32ddc041-b229-43c5-bcad-bec7b03ba18a)
