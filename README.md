@@ -22,7 +22,6 @@
 
 <br/>
 
-<h2>ERD</h2>
+<h2>ERD <a href="https://www.erdcloud.com/d/is6tQGzPgWzmuGB6G">(link)</a></h2> 
 
-![calendar-with-erd](https://github.com/user-attachments/assets/20460f79-e6b7-43af-9e96-f2c8de8cf2f0)
-
+![calendar-with (7)](https://github.com/user-attachments/assets/4d76699a-95a2-49dd-ab00-b477f942d66a)
