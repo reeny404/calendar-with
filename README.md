@@ -19,3 +19,8 @@
 - 특정 달(ex. 8월)의 캘린더 화면 다운로드 <br/>
 	- 1안. 다운로드 시 특정 계정의 항목은 블러 처리. <br/>
 	- 2안. 내가 일정이 가능한 날만 체크해서 일정이 없는 날이 표시된 화면 <br/>
+
+<br/>
+
+<h3>ERD</h3>
+![image](https://github.com/user-attachments/assets/32ddc041-b229-43c5-bcad-bec7b03ba18a)
