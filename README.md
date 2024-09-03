@@ -24,4 +24,5 @@
 
 <h2>ERD</h2>
 
-![image](https://github.com/user-attachments/assets/32ddc041-b229-43c5-bcad-bec7b03ba18a)
+![calendar-with-erd](https://github.com/user-attachments/assets/20460f79-e6b7-43af-9e96-f2c8de8cf2f0)
+
