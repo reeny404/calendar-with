@@ -16,7 +16,7 @@ function CalendarPage() {
       <section className=''>
         <Calendar
           month={month}
-          day={today.getMonth() + 1 === month ? today.getDate() : undefined}
+          day={today.getMonth() + 1 === month ? today.getDate() : null}
         />
       </section>
     </main>
