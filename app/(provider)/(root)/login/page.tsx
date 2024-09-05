@@ -1,5 +1,3 @@
-'use client';
-
 import { getLoginPath } from '@/utils/auth/AuthUtil';
 import Image from 'next/image';
 import Link from 'next/link';
