@@ -34,6 +34,7 @@ function AuthCallbackPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // TODO 로딩 화면 그리기
   return <div>로그인 콜백 페이지</div>;
 }
 
