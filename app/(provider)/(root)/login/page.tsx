@@ -1,12 +1,16 @@
+'use client';
+
+import { getLoginPath } from '@/utils/auth/AuthUtil';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function LoginPage() {
   return (
-    <div className='max-w-[430px] px-4 mx-auto'>
+    <div className='px-4 mx-auto'>
       <h2 className='py-10 leading-relaxed text-3xl'>
-        쉬운 공유 캘린더
+        함께 쓰는
         <br />
-        <span className='font-semibold'>calendar with</span> 사용하기
+        투명한 비밀 캘린더
       </h2>
       <section className='space-y-4'>
         <div className='flex flex-col'>
@@ -28,14 +32,14 @@ function LoginPage() {
         <span className='flex-1 border-b'></span>
       </div>
       <section className='pt-2 flex justify-center'>
-        <button className='p-3 border rounded-full'>
+        <Link className='p-3 border rounded-full' href={getLoginPath()}>
           <Image
             src='/google-logo.svg'
             alt='google logo'
             width={20}
             height={20}
           />
-        </button>
+        </Link>
       </section>
     </div>
   );
