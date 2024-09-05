@@ -4,7 +4,7 @@ import Schedules from './Schedules';
 
 type CalendarProps = {
   month: number;
-  day?: number;
+  day: number | null;
 };
 
 function Calendar({ month, day }: CalendarProps) {
