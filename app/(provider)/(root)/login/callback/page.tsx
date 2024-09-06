@@ -1,5 +1,6 @@
 'use client';
 
+import Loading from '@/components/Loading';
 import { BASE_URL } from '@/constants/env';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
@@ -34,8 +35,7 @@ function AuthCallbackPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // TODO 로딩 화면 그리기
-  return <div>로그인 콜백 페이지</div>;
+  return <Loading />;
 }
 
 export default AuthCallbackPage;

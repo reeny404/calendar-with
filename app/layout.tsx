@@ -8,7 +8,12 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: 'Calendar With',
-  description: '함께 쓰는 공유 캘린더, calendar shared with',
+  description: '내 일정은 비밀로, 공유는 간편하게! 함께 보는 공유 캘린더',
+  openGraph: {
+    type: 'website',
+    url: 'https://www.calendar-with.site/',
+    images: ['@/public/logo.png'],
+  },
 };
 
 export default function RootLayout({
