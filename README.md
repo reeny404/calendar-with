@@ -1,11 +1,3 @@
-프로젝트 일정 (진행중)
------------------------------
-- 24.08.27 ~ ...
-- 24.09.09 ~ 24.09.27 중단 / 09.27 재시작 예정
-
-<br/>
-
-
 calendar-with 장점
 ------------------------------
 
@@ -25,8 +17,7 @@ calendar-with 장점
 
  <a href="https://www.erdcloud.com/d/is6tQGzPgWzmuGB6G">ERD</a>
 -----------------------------
-
-![calendar-with (7)](https://github.com/user-attachments/assets/4d76699a-95a2-49dd-ab00-b477f942d66a)
+![image](https://github.com/user-attachments/assets/a9eabbc8-0d9d-427c-a879-b77d910d4bfd)
 
 
 <br/>
