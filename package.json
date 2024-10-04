@@ -10,10 +10,11 @@
     "gen": "supabase gen types typescript --project-id tbppajqrxdoaokadgehj >  types/database.types.ts"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "@supabase/ssr": "^0.5.1",
     "@supabase/supabase-js": "^2.45.3",
     "clsx": "^2.1.1",
-    "next": "14.2.6",
+    "next": "^14.2.14",
     "react": "^18",
     "react-cookie": "^7.2.0",
     "react-dom": "^18",
@@ -23,7 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
     "supabase": "^1.191.3",
