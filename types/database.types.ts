@@ -54,7 +54,6 @@ export type Database = {
           calendar_name: string
           created_at: string
           id: number
-          nickname: string
           user_id: string | null
         }
         Insert: {
@@ -62,7 +61,6 @@ export type Database = {
           calendar_name?: string
           created_at?: string
           id?: number
-          nickname?: string
           user_id?: string | null
         }
         Update: {
@@ -70,7 +68,6 @@ export type Database = {
           calendar_name?: string
           created_at?: string
           id?: number
-          nickname?: string
           user_id?: string | null
         }
         Relationships: []
@@ -171,13 +168,15 @@ export type Database = {
         }
         Relationships: []
       }
-      users: {
+      user: {
         Row: {
           active: boolean
           created_at: string
           email: string
           id: number
           nick: string
+          profile: string
+          social_id: string
           type: string
           uid: string
           updated_at: string
@@ -188,6 +187,8 @@ export type Database = {
           email?: string
           id?: number
           nick?: string
+          profile?: string
+          social_id?: string
           type?: string
           uid?: string
           updated_at?: string
@@ -198,40 +199,13 @@ export type Database = {
           email?: string
           id?: number
           nick?: string
+          profile?: string
+          social_id?: string
           type?: string
           uid?: string
           updated_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "users_nick_fkey"
-            columns: ["nick"]
-            isOneToOne: false
-            referencedRelation: "calendar_attendee"
-            referencedColumns: ["nickname"]
-          },
-          {
-            foreignKeyName: "users_nick_fkey1"
-            columns: ["nick"]
-            isOneToOne: false
-            referencedRelation: "schedule_attendee"
-            referencedColumns: ["nickname"]
-          },
-          {
-            foreignKeyName: "users_uid_fkey"
-            columns: ["uid"]
-            isOneToOne: true
-            referencedRelation: "calendar_attendee"
-            referencedColumns: ["user_id"]
-          },
-          {
-            foreignKeyName: "users_uid_fkey1"
-            columns: ["uid"]
-            isOneToOne: true
-            referencedRelation: "schedule_attendee"
-            referencedColumns: ["user_id"]
-          },
-        ]
+        Relationships: []
       }
     }
     Views: {
