@@ -2,6 +2,7 @@
 
 import Loading from '@/components/Loading';
 import { BASE_URL } from '@/constants/env';
+import { ParamUtil } from '@/utils/ParamUtil';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { Cookies } from 'react-cookie';
@@ -10,14 +11,12 @@ function AuthCallbackPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const params: Record<string, string> = {};
-    window.location.hash
-      .replace('#', '')
-      .split('&')
-      .forEach((str) => {
-        const [key, value] = str.split('=');
-        params[key] = value;
-      });
+    const queryString: string = window.location.hash.replace('#', '');
+    const params = ParamUtil.parseString(queryString);
+    if (params.error) {
+      router.replace('/login/fail?error=' + JSON.stringify(params.error));
+      return;
+    }
 
     fetch(BASE_URL + '/api/auth', {
       method: 'POST',
@@ -25,15 +24,14 @@ function AuthCallbackPage() {
     })
       .then((response) => response.json())
       .then((response) => {
-        new Cookies().set('access_token', response.accessToken);
-        console.log(response);
+        new Cookies().set('access_token', response.data.accessToken);
         router.replace('/');
       })
       .catch((reason) => {
         console.warn(reason);
+        router.replace('/login');
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router]);
 
   return <Loading />;
 }
