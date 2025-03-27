@@ -8,6 +8,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    height: {
+      header: '4rem',
+      content: 'calc(100vh - 4rem)',
+    },
     colors: {
       ...colors,
       'kakao-yellow': '#FEE500'
