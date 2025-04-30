@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Header() {
   return (
-    <header className='w-full h-header px-4 mb-6 flex items-center justify-between border-b'>
+    <header className='w-full h-header px-4 flex items-center justify-between border-b'>
       <div>
         <Image
           src='/icons/menu.svg'

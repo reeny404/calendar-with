@@ -1,0 +1,13 @@
+# Dependencies
+node_modules
+
+# Package manager files
+package-lock.json
+
+# Other generated files
+.vscode
+.git
+.next
+.env.*
+
+*.d.ts
