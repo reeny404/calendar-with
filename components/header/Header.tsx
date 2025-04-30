@@ -1,27 +1,34 @@
+import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMemo } from 'react';
+import { Button } from '../ui/button';
 
-function Header() {
+export default function Header() {
+  const {title, date} = useMemo(() => {
+    return {
+      title: format(new Date(), 'yyyy년 MM월'),
+      date: new Date().getDate(),
+    };
+  }, []);
+
   return (
-    <header className='w-full h-header px-4 flex items-center justify-between border-b'>
-      <div>
+    <header className='w-full h-header px-0.5 py-2 grid grid-cols-3 items-center justify-between'>
+      <Link href='/'>
         <Image
-          src='/icons/menu.svg'
-          alt='menu'
-          width={24}
-          height={24}
+          src='/logo.png'
+          alt='logo'
+          width={50}
+          height={50}
           priority
         />
-      </div>
-      <div className='flex space-x-2'>
-        <Link href='/login'>로그인</Link>
-        <Image src='/icons/reload.svg' alt='sync' width={24} height={24} />
-        <div className='w-6 h-6 flex items-center justify-center border-2 border-black rounded font-semibold'>
-          {new Date().getDate()}
-        </div>
+      </Link>
+      <h3 className='text-center'>{title}</h3>
+      <div className='flex items-center justify-end gap-x-4'>
+        <Button variant='outline' size='icon' className='border-gray-700'>
+          {date}
+        </Button>
       </div>
     </header>
   );
 }
-
-export default Header;

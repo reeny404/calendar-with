@@ -1,6 +1,7 @@
 import { AccessToken } from '@/server/auth/AccessToken';
 import { User } from '@/server/auth/User';
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 /**
  * 최초 회원가입

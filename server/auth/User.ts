@@ -1,5 +1,5 @@
-import { UserInfo } from '@/types/auth.types';
-import { Tables } from '@/types/database.types';
+import type { UserInfo } from '@/types/auth.types';
+import type { Tables } from '@/types/database.types';
 import { createClient } from '@/utils/supabase/server';
 
 export const User = {

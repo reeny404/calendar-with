@@ -3,7 +3,7 @@ type SchedulesProps = {
   day: number;
 };
 
-function Schedules({ month, day }: SchedulesProps) {
+function Schedules({  }: SchedulesProps) {
   // TODO month, day 기준으로 데이터 불러와서 그리기
 
   return (

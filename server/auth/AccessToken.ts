@@ -1,4 +1,4 @@
-import { AccessToken as AccessTokenType } from '@/types/auth.types';
+import type { AccessToken as AccessTokenType } from '@/types/auth.types';
 import { createClient } from '@/utils/supabase/server';
 
 export const AccessToken = {
