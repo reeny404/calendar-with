@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "gen": "supabase gen types typescript --project-id tbppajqrxdoaokadgehj > types/database.types.ts"
+    "gen": "supabase gen types typescript --project-id rckeaqrjpcozaoqxxsyx > types/database.types.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
