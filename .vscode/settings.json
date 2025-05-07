@@ -2,20 +2,14 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit",
-    "source.removeUnused.ts": "explicit",
-    "source.addMissingImports.ts": "explicit",
-    "source.removeUnusedImports": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortImports": "explicit",
-    "source.fixAll.ts": "explicit"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always",
+    "source.removeUnused.ts": "always",
+    "source.addMissingImports.ts": "always",
+    "source.removeUnusedImports": "always",
+    "source.organizeImports": "always",
+    "source.sortImports": "always",
+    "source.fixAll.ts": "always"
   },
   "eslint.validate": [
     "javascript",
@@ -23,7 +17,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.requireConfig": true,
   "npm.packageManager": "pnpm",
   "typescript.tsdk": "node_modules/typescript/lib"
 }
