@@ -7,6 +7,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.calendar-with.site/'),
   title: 'Calendar With',
   description: '내 일정은 비밀로, 공유는 간편하게! 함께 보는 공유 캘린더',
   openGraph: {

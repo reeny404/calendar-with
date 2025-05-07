@@ -3,7 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 
 export const AccessToken = {
   insert: async (token: AccessTokenType): Promise<AccessTokenType> => {
-    const supabase = createClient();
+    const supabase = await createClient();
     const { error } = await supabase.from('token').insert(token);
 
     if (error) {

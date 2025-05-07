@@ -8,12 +8,8 @@ export const User = {
       return null;
     }
 
-    const supabase = createClient();
-    const { data } = await supabase
-      .from('users')
-      .select()
-      .eq('social_id', socialId)
-      .maybeSingle();
+    const supabase = await createClient();
+    const { data } = await supabase.from('users').select().eq('social_id', socialId).maybeSingle();
 
     return data;
   },
@@ -23,7 +19,7 @@ export const User = {
       return user;
     }
 
-    const supabase = createClient();
+    const supabase = await createClient();
     const { data: insertUser, error } = await supabase
       .from('user')
       .insert(info)

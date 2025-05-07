@@ -34,12 +34,7 @@ function LoginPage() {
           className='w-12 h-12 p-3 flex items-center justify-center border rounded-full'
           href={getLoginPath()}
         >
-          <Image
-            src='/google-logo.svg'
-            alt='google-logo'
-            width={20}
-            height={20}
-          />
+          <Image src='/google-logo.svg' alt='google-logo' width={20} height={20} />
         </Link>
         {/* <Link
           className='w-12 h-12 p-3 flex items-center justify-center border rounded-full bg-kakao-yellow border-kakao-yellow '

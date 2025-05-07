@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 const AuthCallbackPage = dynamic(() => import('./AuthCallback'), {
-  ssr: false
-})
+  ssr: false,
+});
 
 export default AuthCallbackPage;
