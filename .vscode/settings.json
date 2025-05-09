@@ -11,6 +11,9 @@
     "source.sortImports": "always",
     "source.fixAll.ts": "always"
   },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",

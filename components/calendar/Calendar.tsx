@@ -1,8 +1,7 @@
 'use client';
 
-import clsx from 'clsx';
 import { useMemo } from 'react';
-import { DateBox } from './Box';
+import { Box } from './Box';
 import Schedules from './Schedules';
 
 type CalendarProps = {
@@ -11,46 +10,35 @@ type CalendarProps = {
 };
 
 function Calendar({ month, day }: CalendarProps) {
-  const header = useMemo(() => {
-    return (
-      <div className='grid grid-cols-7'>
-        {['일', '월', '화', '수', '목', '금', '토'].map((day, index) => (
-          <span key={index} className='py-1 text-center nth-1:text-red-600 nth-7:text-blue-600'>
-            {day}
-          </span>
-        ))}
-      </div>
-    );
-  }, []);
-
   const dates = useMemo(() => {
-    const startDate: Date = new Date(2024, month - 1, 1);
-    const endDate: Date = new Date(2024, month, 0);
+    const startDay = new Date(2024, month - 1, 1).getDay(); // 현재 달, 첫째 날의 요일
+    const endDate = new Date(2024, month, 0).getDate(); // 현재 달, 마지막 날의 날짜
 
-    return Array(endDate.getDate() + startDate.getDay())
+    return Array(endDate + startDay)
       .fill(undefined)
       .map((_, i) => {
-        const date = i + 1 - startDate.getDay();
-        return date > 0 ? date : '';
+        const date = i + 1 - startDay;
+        return date > 0 ? date : _;
       });
   }, [month]);
 
   return (
     <div className='flex flex-col h-full'>
-      {header}
+      <div className='grid grid-cols-7'>
+        <span className='py-1 text-center text-red-600'>일</span>
+        <span className='py-1 text-center'>월</span>
+        <span className='py-1 text-center'>화</span>
+        <span className='py-1 text-center'>수</span>
+        <span className='py-1 text-center'>목</span>
+        <span className='py-1 text-center'>금</span>
+        <span className='py-1 text-center text-blue-600'>토</span>
+      </div>
       <div className='flex-1 grid grid-cols-7'>
         {dates.map((date, i) => (
-          <DateBox
-            key={i}
-            className={clsx('w-full h-full nth-[7n-6]:text-red-500 nth-[7n]:text-blue-500', {
-              'border-2 rounded': date === day,
-            })}
-          >
-            {date}
-          </DateBox>
+          <Box key={i} title={date} selected={date === day} />
         ))}
       </div>
-      <div className='relative bottom-0 mx-5 py-3 space-y-2 border-t'>
+      <div className='relative bottom-0 py-3 space-y-2 border-t'>
         {day && <Schedules month={month} day={day} />}
         <div className='space-x-1 flex'>
           <input className='flex-1 px-3 py-1 border border-gray-400 rounded outline-none' />
