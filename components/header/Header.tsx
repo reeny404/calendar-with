@@ -1,16 +1,20 @@
+'use client';
+
+import { DateContext } from '@/context/DateContext';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { Button } from '../ui/button';
 
 export default function Header() {
+  const { selection: selection } = useContext(DateContext);
   const { title, date } = useMemo(() => {
     return {
-      title: format(new Date(), 'yyyy년 MM월'),
-      date: new Date().getDate(),
+      title: format(selection, 'yyyy년 MM월'),
+      date: selection.getDate(),
     };
-  }, []);
+  }, [selection]);
 
   return (
     <header className='w-full h-header flex items-center justify-between'>
