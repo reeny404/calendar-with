@@ -27,6 +27,13 @@ export type Database = {
         };
         Relationships: [
           {
+            foreignKeyName: 'calendar_id_fkey';
+            columns: ['id'];
+            isOneToOne: false;
+            referencedRelation: 'calendar_attendee';
+            referencedColumns: ['calendar_id'];
+          },
+          {
             foreignKeyName: 'schdule_groups_id_fkey';
             columns: ['id'];
             isOneToOne: false;
@@ -45,21 +52,18 @@ export type Database = {
       calendar_attendee: {
         Row: {
           calendar_id: number;
-          calendar_name: string;
           created_at: string;
           id: number;
           user_id: string | null;
         };
         Insert: {
           calendar_id: number;
-          calendar_name?: string;
           created_at?: string;
           id?: number;
           user_id?: string | null;
         };
         Update: {
           calendar_id?: number;
-          calendar_name?: string;
           created_at?: string;
           id?: number;
           user_id?: string | null;
@@ -106,7 +110,15 @@ export type Database = {
           title?: string;
           updated_at?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: 'schedule_id_fkey';
+            columns: ['id'];
+            isOneToOne: true;
+            referencedRelation: 'schedule_attendee';
+            referencedColumns: ['schedule_id'];
+          },
+        ];
       };
       schedule_attendee: {
         Row: {
@@ -141,6 +153,7 @@ export type Database = {
           refresh_token: string;
           social_type: string;
           token_type: string;
+          user_id: string;
         };
         Insert: {
           access_token?: string;
@@ -150,6 +163,7 @@ export type Database = {
           refresh_token?: string;
           social_type?: string;
           token_type?: string;
+          user_id: string;
         };
         Update: {
           access_token?: string;
@@ -159,6 +173,7 @@ export type Database = {
           refresh_token?: string;
           social_type?: string;
           token_type?: string;
+          user_id?: string;
         };
         Relationships: [];
       };
@@ -167,7 +182,6 @@ export type Database = {
           active: boolean;
           created_at: string;
           email: string;
-          id: number;
           nick: string;
           profile: string;
           social_id: string;
@@ -179,7 +193,6 @@ export type Database = {
           active?: boolean;
           created_at?: string;
           email?: string;
-          id?: number;
           nick?: string;
           profile?: string;
           social_id?: string;
@@ -191,7 +204,6 @@ export type Database = {
           active?: boolean;
           created_at?: string;
           email?: string;
-          id?: number;
           nick?: string;
           profile?: string;
           social_id?: string;
@@ -199,7 +211,29 @@ export type Database = {
           uid?: string;
           updated_at?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: 'user_uid_fkey';
+            columns: ['uid'];
+            isOneToOne: true;
+            referencedRelation: 'calendar_attendee';
+            referencedColumns: ['user_id'];
+          },
+          {
+            foreignKeyName: 'user_uid_fkey1';
+            columns: ['uid'];
+            isOneToOne: true;
+            referencedRelation: 'schedule_attendee';
+            referencedColumns: ['user_id'];
+          },
+          {
+            foreignKeyName: 'user_uid_fkey2';
+            columns: ['uid'];
+            isOneToOne: true;
+            referencedRelation: 'token';
+            referencedColumns: ['user_id'];
+          },
+        ];
       };
     };
     Views: {
