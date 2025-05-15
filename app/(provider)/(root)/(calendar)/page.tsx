@@ -1,6 +1,6 @@
 'use client';
 
-import Calendar from '@/components/calendar/Calendar';
+import Calendar from '@/components/calendar';
 import { Button } from '@/components/ui/button';
 import { DateContext } from '@/context/DateContext';
 import { useContext } from 'react';
