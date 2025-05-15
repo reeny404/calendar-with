@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Package manager files
+package-lock.json
+
+# Other generated files
+.vscode
+.git
+.next
+.env.*
+
+*.d.ts
+
+# 특정 파일 확장자 제외
+*.md
+*.json
+*.yaml
+*.yml
+*.lock
+*.log
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot

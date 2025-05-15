@@ -2,32 +2,61 @@
   "name": "calendar-with",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@8.15.4",
   "scripts": {
+    "prepare": "husky",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen": "supabase gen types typescript --project-id tbppajqrxdoaokadgehj >  types/database.types.ts"
+    "format": "prettier --write .",
+    "gen": "supabase gen types typescript --project-id rckeaqrjpcozaoqxxsyx > types/database.types.ts"
   },
   "dependencies": {
-    "@supabase/ssr": "^0.5.1",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.45.3",
+    "@tailwindcss/postcss": "^4.1.4",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "next": "14.2.6",
-    "react": "^18",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.503.0",
+    "next": "^15.3.1",
+    "postcss": "^8.5.3",
+    "react": "^19.1",
     "react-cookie": "^7.2.0",
-    "react-dom": "^18",
-    "react-lottie-player": "^2.1.0"
+    "react-dom": "^19.1",
+    "react-lottie-player": "^2.1.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@next/eslint-plugin-next": "^15.3.1",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.6",
-    "postcss": "^8",
+    "@types/react": "^19.1",
+    "@types/react-dom": "^19.1",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.3",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
     "supabase": "^1.191.3",
-    "tailwindcss": "^3.4.1",
+    "tw-animate-css": "^1.2.8",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
