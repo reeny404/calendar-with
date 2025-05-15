@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo } from 'react';
-import { Box } from './Box';
-import Schedules from './Schedules';
+import { Box } from '../schedule/Box';
+import Schedules from '../schedule';
 
 type CalendarProps = {
   month: number; // 현재 달
