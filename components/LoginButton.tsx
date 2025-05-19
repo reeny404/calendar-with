@@ -4,6 +4,9 @@ import { getLoginPath } from '@/lib/supabase/auth';
 import { createClient } from '@/lib/supabase/client';
 import Image from 'next/image';
 
+/**
+ * FIXME: testInsert 제거 및 로그인 로직 정리 필요
+ */
 export default function LoginButton() {
   const handleClick = (type: 'google' | 'kakao') => async () => {
     const {
@@ -19,7 +22,7 @@ export default function LoginButton() {
   };
 
   const testInsert = async () => {
-    const supabase = await createClient();
+    const supabase = createClient();
     const { data, error } = await supabase.from('user').insert({
       type: 'insert-test',
       email: 'test@test.com',
