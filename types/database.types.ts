@@ -38,14 +38,14 @@ export type Database = {
             columns: ['id'];
             isOneToOne: false;
             referencedRelation: 'schedule';
-            referencedColumns: ['group_id'];
+            referencedColumns: ['calendar_id'];
           },
           {
             foreignKeyName: 'schdule_groups_name_fkey';
             columns: ['name'];
             isOneToOne: false;
             referencedRelation: 'schedule';
-            referencedColumns: ['group_name'];
+            referencedColumns: ['calendar_name'];
           },
         ];
       };
@@ -54,30 +54,41 @@ export type Database = {
           calendar_id: number;
           created_at: string;
           id: number;
-          user_id: string | null;
+          role: string;
+          user_id: string;
         };
         Insert: {
           calendar_id: number;
           created_at?: string;
           id?: number;
-          user_id?: string | null;
+          role?: string;
+          user_id: string;
         };
         Update: {
           calendar_id?: number;
           created_at?: string;
           id?: number;
-          user_id?: string | null;
+          role?: string;
+          user_id?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: 'calendar_attendee_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: true;
+            referencedRelation: 'user';
+            referencedColumns: ['uid'];
+          },
+        ];
       };
       schedule: {
         Row: {
           active: boolean;
+          calendar_id: number;
+          calendar_name: string;
           content: string;
           created_at: string;
           end_date: string;
-          group_id: number;
-          group_name: string;
           id: number;
           is_all_day: boolean;
           start_date: string;
@@ -86,11 +97,11 @@ export type Database = {
         };
         Insert: {
           active?: boolean;
+          calendar_id: number;
+          calendar_name?: string;
           content?: string;
           created_at?: string;
           end_date?: string;
-          group_id: number;
-          group_name?: string;
           id?: number;
           is_all_day?: boolean;
           start_date?: string;
@@ -99,11 +110,11 @@ export type Database = {
         };
         Update: {
           active?: boolean;
+          calendar_id?: number;
+          calendar_name?: string;
           content?: string;
           created_at?: string;
           end_date?: string;
-          group_id?: number;
-          group_name?: string;
           id?: number;
           is_all_day?: boolean;
           start_date?: string;
@@ -142,7 +153,15 @@ export type Database = {
           schedule_id?: number;
           user_id?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: 'schedule_attendee_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: true;
+            referencedRelation: 'user';
+            referencedColumns: ['uid'];
+          },
+        ];
       };
       token: {
         Row: {
@@ -175,7 +194,15 @@ export type Database = {
           token_type?: string;
           user_id?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: 'token_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: true;
+            referencedRelation: 'user';
+            referencedColumns: ['uid'];
+          },
+        ];
       };
       user: {
         Row: {
@@ -211,29 +238,7 @@ export type Database = {
           uid?: string;
           updated_at?: string;
         };
-        Relationships: [
-          {
-            foreignKeyName: 'user_uid_fkey';
-            columns: ['uid'];
-            isOneToOne: true;
-            referencedRelation: 'calendar_attendee';
-            referencedColumns: ['user_id'];
-          },
-          {
-            foreignKeyName: 'user_uid_fkey1';
-            columns: ['uid'];
-            isOneToOne: true;
-            referencedRelation: 'schedule_attendee';
-            referencedColumns: ['user_id'];
-          },
-          {
-            foreignKeyName: 'user_uid_fkey2';
-            columns: ['uid'];
-            isOneToOne: true;
-            referencedRelation: 'token';
-            referencedColumns: ['user_id'];
-          },
-        ];
+        Relationships: [];
       };
     };
     Views: {
